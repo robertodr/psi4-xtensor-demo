@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Clone repository
-git clone --single-branch -b xtensor https://github.com/robertodr/psi4
-# Configure
-cd psi4
-`psi4-path-advisor --gcc` -DUSE_XSIMD=ON
-# Build
-cmake --build objdir --target install
