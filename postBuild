@@ -17,6 +17,7 @@ cmake -H. -Bbuild -GNinja \
       -DCMAKE_C_COMPILER=gcc \
       -DCMAKE_BUILD_TYPE=Release \
       -DPYTHON_EXECUTABLE=$(which python) \
+      -DCMAKE_INSTALL_PREFIX=${NB_USER}/Software/psi4 \
       -DENABLE_PLUGIN_TESTING=ON
 # Build and install
 echo "Building psi4"
