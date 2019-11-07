@@ -11,8 +11,8 @@ dependencies:
   - xsimd==7.4.1
   - msgpack-python
   - cmake
+  - ninja
   - gcc_linux-64
-  - gfortran_linux-64
   - gxx_linux-64
   - boost
   - pybind11

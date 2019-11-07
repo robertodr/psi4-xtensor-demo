@@ -12,13 +12,11 @@ git clone --single-branch -b xtensor https://github.com/robertodr/psi4
 cd psi4 || exit
 # Configure
 echo "Configuring psi4"
-cmake -H. -Bbuild \
+cmake -H. -Bbuild -GNinja \
       -DCMAKE_CXX_COMPILER=g++ \
       -DCMAKE_C_COMPILER=gcc \
-      -DCMAKE_Fortran_COMPILER=gfortran \
       -DCMAKE_BUILD_TYPE=Release \
       -DUSE_XSIMD=ON \
-      -DENABLE_PCMSolver=ON \
       -DPYTHON_EXECUTABLE=$(which python) \
       -DENABLE_PLUGIN_TESTING=ON
 # Build and install
