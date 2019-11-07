@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Initialize conda
+echo "Initialize conda"
+source "/srv/conda/etc/profile.d/conda.sh"
+# Activate conda environment
+echo "Activating conda environment"
+conda activate /srv/conda/envs/notebook
+# Clone repository
+echo "Cloning xtensor branch of robertodr/psi4"
+git clone --single-branch -b xtensor https://github.com/robertodr/psi4
+cd psi4 || exit
+# Configure
+echo "Configuring psi4"
+cmake -H. -Bbuild -GNinja \
+      -DCMAKE_CXX_COMPILER=g++ \
+      -DCMAKE_C_COMPILER=gcc \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DUSE_XSIMD=ON \
+      -DPYTHON_EXECUTABLE=$(which python) \
+      -DENABLE_PLUGIN_TESTING=ON
+# Build and install
+echo "Building psi4"
+cmake --build build --target install
