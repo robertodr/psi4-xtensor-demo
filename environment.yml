@@ -15,8 +15,8 @@ dependencies:
   - gcc_linux-64
   - gxx_linux-64
   - pybind11
-  - libint
-  - libxc
+  - libint==1.2.1
+  - libxc==4.3.4
   - gau2grid
   - mkl-devel
   - qcengine
