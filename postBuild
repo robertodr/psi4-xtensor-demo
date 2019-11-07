@@ -16,7 +16,6 @@ cmake -H. -Bbuild -GNinja \
       -DCMAKE_CXX_COMPILER=g++ \
       -DCMAKE_C_COMPILER=gcc \
       -DCMAKE_BUILD_TYPE=Release \
-      -DUSE_XSIMD=ON \
       -DPYTHON_EXECUTABLE=$(which python) \
       -DENABLE_PLUGIN_TESTING=ON
 # Build and install
