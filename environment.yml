@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+  - psi4/label/dev
+  - defaults
+dependencies:
+  - blas=*=mkl
+  - pandas
+  - matplotlib
+  - scipy
+  - sympy
+  - h5py
+  - psi4-dev
+  - psi4-rt
+  - xtensor-python
+  - xtensor-blas
+  - xsimd
+  - msgpack-python
