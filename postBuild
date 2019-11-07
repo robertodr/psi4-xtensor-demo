@@ -12,7 +12,15 @@ git clone --single-branch -b xtensor https://github.com/robertodr/psi4
 cd psi4 || exit
 # Configure
 echo "Configuring psi4"
-`psi4-path-advisor --gcc` -DUSE_XSIMD=ON
-# Build
+cmake -H. -Bbuild \
+      -DCMAKE_CXX_COMPILER=g++ \
+      -DCMAKE_C_COMPILER=gcc \
+      -DCMAKE_Fortran_COMPILER=gfortran \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DUSE_XSIMD=ON \
+      -DENABLE_PCMSolver=ON \
+      -DPYTHON_EXECUTABLE=$(which python) \
+      -DENABLE_PLUGIN_TESTING=ON
+# Build and install
 echo "Building psi4"
-cmake --build objdir --target install
+cmake --build build --target install
