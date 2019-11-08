@@ -15,7 +15,7 @@ cd psi4 || exit
 
 # Configure
 echo "Configuring psi4"
-cmake -H. -Bbuild -GNinja \
+cmake -H. -Bbuild \
       -DCMAKE_CXX_COMPILER=g++ \
       -DCMAKE_C_COMPILER=gcc \
       -DCMAKE_BUILD_TYPE=Release \
