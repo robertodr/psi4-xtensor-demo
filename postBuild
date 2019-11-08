@@ -22,12 +22,12 @@ echo "Configuring psi4"
 
 # Build and install
 echo "Building psi4"
-cmake --build build --target install
+cmake --build objdir --target install
 
 # Test a little bit
 echo "Running smoke tests"
 (
-cd build
+cd objdir
 ctest -L smoke
 )
 
