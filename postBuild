@@ -20,7 +20,7 @@ cmake -H. -Bbuild \
       -DCMAKE_C_COMPILER=gcc \
       -DCMAKE_BUILD_TYPE=Debug \
       -DPYTHON_EXECUTABLE=$(which python) \
-      -DCMAKE_INSTALL_PREFIX=${NB_USER}/Software/psi4
+      -DCMAKE_INSTALL_PREFIX=/home/${NB_USER}/Software/psi4
 
 # Build and install
 echo "Building psi4"
@@ -35,8 +35,8 @@ ctest -L smoke
 
 # Make available to Python
 echo "Export PYTHONPATH and PSI_SCRATCH"
-export PYTHONPATH=${NB_USER}/Software/psi4/lib:$PYTHONPATH
+export PYTHONPATH=/home/${NB_USER}/Software/psi4/lib:$PYTHONPATH
 echo "PYTHONPATH is now set to ${PYTHONPATH}"
-export PSI_SCRATCH=${NB_USER}/Scratch/psi4scr
+export PSI_SCRATCH=/home/${NB_USER}/Scratch/psi4scr
 mkdir -p ${PSI_SCRATCH}
 echo "PSI_SCRATCH is now set to ${PSI_SCRATCH}"
