@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Make available to Python
+echo "Export PYTHONPATH and PSI_SCRATCH"
+export PYTHONPATH=/home/${NB_USER}/Software/psi4/lib:$PYTHONPATH
+echo "PYTHONPATH is now set to ${PYTHONPATH}"
+export PSI_SCRATCH=/home/${NB_USER}/Scratch/psi4scr
+mkdir -p ${PSI_SCRATCH}
+echo "PSI_SCRATCH is now set to ${PSI_SCRATCH}"
+
+exec "$@"
