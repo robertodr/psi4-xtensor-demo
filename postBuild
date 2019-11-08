@@ -15,12 +15,10 @@ cd psi4 || exit
 
 # Configure
 echo "Configuring psi4"
-cmake -H. -Bbuild \
-      -DCMAKE_CXX_COMPILER=g++ \
-      -DCMAKE_C_COMPILER=gcc \
-      -DCMAKE_BUILD_TYPE=Debug \
-      -DPYTHON_EXECUTABLE=$(which python) \
-      -DCMAKE_INSTALL_PREFIX=/home/${NB_USER}/Software/psi4
+`psi4-path-advisor --gcc` \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DENABLE_PCMSolver=ON \
+  -DCMAKE_INSTALL_PREFIX=/home/${NB_USER}/Software/psi4
 
 # Build and install
 echo "Building psi4"

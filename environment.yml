@@ -1,28 +1,15 @@
 channels:
   - conda-forge
   - psi4/label/dev
+  - psi4
   - defaults
 dependencies:
   - blas=*=mkl
-  - matplotlib
-  - h5py
   - xtensor-python==0.23.1
   - xtensor-blas==0.16.1
   - xsimd==7.4.1
+  - psi4-dev
   - msgpack-python
-  - cmake
-  - gcc_linux-64
-  - gxx_linux-64
-  - pybind11
-  - libint==1.2.1
-  - libxc==4.3.4
-  - gau2grid
-  - mkl-devel
-  - qcengine
-  - qcelemental
-  - pydantic
-  - pytest
+  - matplotlib
+  - h5py
   - numpy
-  - pint
-
-# NOTE We are building psi4-dev "by hand" to avoid failing resolution of pybind11
