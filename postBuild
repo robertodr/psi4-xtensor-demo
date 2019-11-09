@@ -16,8 +16,18 @@ cd psi4 || exit
 # Configure
 echo "Configuring psi4"
 `psi4-path-advisor --gcc` \
+  -DCMAKE_PREFIX_PATH=/srv/conda/envs/notebook \
   -DCMAKE_BUILD_TYPE=Release \
   -DENABLE_PCMSolver=ON \
+  -DENABLE_CheMPS2=OFF \
+  -DENABLE_dkh=OFF \
+  -DENABLE_libefp=OFF \
+  -DENABLE_erd=OFF  \
+  -DENABLE_gdma=OFF \
+  -DENABLE_simint=OFF \
+  -DENABLE_snsmp2=OFF \
+  -DENABLE_v2rdm_casscf=OFF \
+  -DENABLE_PLUGIN_TESTING=OFF \
   -DCMAKE_INSTALL_PREFIX=/home/${NB_USER}/Software/psi4
 
 # Build and install
