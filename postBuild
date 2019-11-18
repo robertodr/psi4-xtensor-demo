@@ -34,19 +34,19 @@ echo "Configuring psi4"
   -DCMAKE_INSTALL_PREFIX=/home/${NB_USER}/Software/psi4
 
 # Build
-echo "Building Psi4"
-cmake --build objdir
-
-# Test a little bit
-echo "Running smoke tests"
-(
-cd objdir || exit
-ctest -L smoke
-)
-
-# Install
-echo "Installing Psi4"
+echo "Building and installing Psi4"
 cmake --build objdir --target install
+
+## Test a little bit
+#echo "Running smoke tests"
+#(
+#cd objdir || exit
+#ctest -L smoke
+#)
+#
+## Install
+#echo "Installing Psi4"
+#cmake --build objdir --target install
 
 # Proper initialization of conda, maybe it sticks?
 conda init bash
