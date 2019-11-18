@@ -43,7 +43,7 @@ ctest -L smoke
 
 # Install
 echo "Installing Psi4"
-cmake --build objdit --target install
+cmake --build objdir --target install
 
 # Proper initialization of conda, maybe it sticks?
 conda init bash
