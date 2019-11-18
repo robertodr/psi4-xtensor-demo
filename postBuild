@@ -37,7 +37,7 @@ cmake --build objdir
 # Test a little bit
 echo "Running smoke tests"
 (
-cd objdir
+cd objdir || exit
 ctest -L smoke
 )
 
