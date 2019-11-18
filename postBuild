@@ -8,6 +8,9 @@ source "/srv/conda/etc/profile.d/conda.sh"
 echo "Activating conda environment"
 conda activate /srv/conda/envs/notebook
 
+# I don't do it earlier 'cause I don't want to mess with conda.sh
+set -euo pipefail
+
 # Clone repository
 echo "Cloning xtensor branch of robertodr/psi4"
 git clone --single-branch -b xtensor https://github.com/robertodr/psi4
