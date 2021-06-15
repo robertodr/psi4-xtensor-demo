@@ -5,13 +5,14 @@ channels:
   - defaults
 dependencies:
   - blas=*=mkl
-  - xtensor-python
-  - xtensor-blas
-  - xtensor-io
-  - highfive
-  - xsimd
+  #- xtensor-python
+  #- xtensor-blas
+  #- xtensor-io
+  #- highfive
+  #- xsimd
   - psi4-dev
   - msgpack-python
   - matplotlib
   - h5py
   - numpy
+  - hdf5
