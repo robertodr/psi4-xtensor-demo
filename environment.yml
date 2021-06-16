@@ -1,18 +1,27 @@
 channels:
   - conda-forge
   - psi4/label/dev
-  - psi4
   - defaults
 dependencies:
   - blas=*=mkl
+  # force the build system to download the xtensor stack afresh
   #- xtensor-python
   #- xtensor-blas
   #- xtensor-io
   #- highfive
   #- xsimd
-  - psi4-dev=1.3.2
+  - cmake
+  - qcelemental
+  - qcengine
+  - gau2grid
+  - libint=1.2.1
+  - libxc=4.3.4
+  - mkl-devel
+  - mkl
+  - mkl-include
+  - numpy
+  - pybind11
   - msgpack-python
   - matplotlib
   - h5py
-  - numpy
   - hdf5
