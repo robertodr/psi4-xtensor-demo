@@ -18,10 +18,10 @@ cd psi4 || exit
 
 # Configure
 echo "Configuring psi4"
-`psi4-path-advisor --gcc` \
+cmake -S. -Bbuild \
   -DCMAKE_PREFIX_PATH=/srv/conda/envs/notebook \
   -DCMAKE_BUILD_TYPE=Release \
-  -DENABLE_PCMSolver=ON \
+  -DENABLE_PCMSolver=OFF \
   -DENABLE_CheMPS2=OFF \
   -DENABLE_dkh=OFF \
   -DENABLE_libefp=OFF \
@@ -35,7 +35,7 @@ echo "Configuring psi4"
 
 # Build
 echo "Building and installing Psi4"
-cmake --build objdir --target install
+cmake --build build --target install
 
 ## Test a little bit
 #echo "Running smoke tests"
